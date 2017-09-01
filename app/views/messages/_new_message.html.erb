@@ -1,13 +1,16 @@
 <article class="new-message">
   <%= render partial: "shared/errors", locals: { record: new_message } %>
   <%= form_for(new_message) do |form_object| %>
-    <div class="field-group">
+    <section>
+    <div class="message-body">
       <%= form_object.hidden_field :user_id, value: current_user.id %>
       <%= form_object.text_area :body, placeholder: "Send a new message..." %>
     </div>
 
-    <div class="field-group">
+    <div class="attach-submit">
+      <%= form_object.file_field :attached_image %>
       <%= form_object.submit "Send", class: "submit" %>
     </div>
+    </section>
   <% end %>
 </article>

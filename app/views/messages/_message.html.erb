@@ -4,9 +4,14 @@
     @<%= message.user.name %>
     <small class="sent-at"> <%= time_ago_in_words(message.created_at) %> ago</small>
   </div>
-  <div class="message-body">
+  <div class="message-body-<%= message.attached_image.present? ? 'mixed-media' : 'text-only' %>">
     <p><%= message.body_for_timeline %></p>
   </div>
+  <% if message.attached_image.present? %>
+    <div class="message-image">
+      <%= image_tag message.attached_image.url %>
+    </div>
+  <% end %>
   <div class="message-delete">
     <%= link_to message_path(message), method: :delete, class: 'delete-message' do %>
       <%= image_tag "trash" %>

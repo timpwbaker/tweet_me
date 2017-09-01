@@ -4,12 +4,15 @@ RSpec.feature "user visits index page", :type => :feature do
   context "creating a message" do
     it "sucessfully creates a message" do
       visit root_path
-      fill_in "New message", with: "Rails magic"
+      fill_in "message_body", with: "Rails magic"
+      attach_file "message_attached_image", Rails.root + 'spec/test-files/test.png'
       click_button "Send"
 
       expect(page).to have_content "Rails magic"
+      expect(page).to have_xpath("//img[contains(@src,'test.png')]")
       expect(page).to have_content "Successfully sent message, why not send another?"
     end
+
     it "fails validation and is given errors" do
       visit root_path
       click_button "Send"
