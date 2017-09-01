@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <section>
+      <nav>
+        <%= link_to "TweetME", root_path, class: "home" %> 
+        <small>Be Original</small>
+      </nav>
+    </section>
+
+    </header>
+    <%= render partial: "shared/flashes" %>
     <%= yield %>
   </body>
 </html>

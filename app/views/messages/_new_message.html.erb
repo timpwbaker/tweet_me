@@ -1,8 +1,13 @@
-<%= render partial: "shared/errors", locals: { record: message } %>
-<%= form_for(message) do |form_object| %>
-  <%= form_object.hidden_field :user_id, value: current_user.id %>
-  <%= form_object.label :body, "New message" %>
-  <%= form_object.text_area :body %>
+<article class="new-message">
+  <%= render partial: "shared/errors", locals: { record: new_message } %>
+  <%= form_for(new_message) do |form_object| %>
+    <div class="field-group">
+      <%= form_object.hidden_field :user_id, value: current_user.id %>
+      <%= form_object.text_area :body, placeholder: "Send a new message..." %>
+    </div>
 
-  <%= form_object.submit "Send" %>
-<% end %>
+    <div class="field-group">
+      <%= form_object.submit "Send", class: "submit" %>
+    </div>
+  <% end %>
+</article>

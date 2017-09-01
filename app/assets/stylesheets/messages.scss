@@ -1,0 +1,24 @@
+article.message {
+  border-bottom: 1px solid #ccc;
+  padding:15px;
+}
+
+article.new-message {
+  width: 100%;
+  padding: 4% 2%;
+}
+
+article.new-message textarea {
+  height: 100px;
+}
+
+.message-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.message-delete a {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

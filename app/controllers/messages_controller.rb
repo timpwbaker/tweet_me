@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    current_message = Message.new
-    render locals: { messages: messages, current_message: current_message }
+    new_message = Message.new
+    render locals: { messages: messages, new_message: new_message }
   end
 
   def create
@@ -11,21 +11,31 @@ class MessagesController < ApplicationController
       flash[:success] = "Successfully sent message, why not send another?"
       redirect_to root_path
     else
-      render :index, locals: { messages: messages, current_message: message }
+      render :index, locals: { messages: messages, new_message: message }
+    end
+  end
+
+  def destroy
+    if message.destroy
+      flash[:success] = "Successfully deleted your message"
+      redirect_to root_path
+    else
+      flash[:error] = "It is not possible to delete this message"
+      redirect_to root_path
     end
   end
 
   private
+
+  def message
+    Message.find(params[:id])
+  end
 
   def message_params
     params.require(:message).permit(:body, :user_id)
   end
 
   def messages
-    if current_user
-      current_user.messages
-    else
-      Message.all
-    end
+    Message.all.reverse
   end
 end

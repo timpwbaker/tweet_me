@@ -1,0 +1,34 @@
+@import "bootstrap";
+
+// Page section elements
+body { @extend .container; }
+
+section { @extend .row; }
+
+article.new-message { @extend .col-md-12; }
+article.new-message textarea { @extend .form-control; }
+article.message { @extend .row; @extend .col-md-12; }
+article.message .message-username { @extend .col-md-12; }
+article.message .message-body { @extend .col-md-11 }
+article.message .message-delete { @extend .col-md-1 }
+
+.alert { @extend .alert }
+.alert-success { @extend .alert-success }
+.alert-danger { @extend .alert-danger }
+
+//Navigation elements
+nav { @extend .navbar; }
+nav a.home { @extend .navbar-brand }
+
+// Interactive elements
+input.submit { @extend .btn; @extend .btn-primary }
+a.delete-message { @extend .btn; @extend .btn-danger }
+
+// Text elements
+p.strong { @extend .lead; }
+small { @extend .text-muted }
+
+// Form elements
+
+div.field-group { @extend .form-group; }
+

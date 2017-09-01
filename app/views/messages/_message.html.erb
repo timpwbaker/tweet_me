@@ -1,1 +1,15 @@
-<p><%= message.body %></p>
+<article class="message">
+  <div class="message-username">
+  <h4>
+    @<%= message.user.name %>
+    <small class="sent-at"> <%= time_ago_in_words(message.created_at) %> ago</small>
+  </div>
+  <div class="message-body">
+    <p><%= message.body_for_timeline %></p>
+  </div>
+  <div class="message-delete">
+    <%= link_to message_path(message), method: :delete, class: 'delete-message' do %>
+      <%= image_tag "trash" %>
+    <% end %>
+  </div>
+</article>
