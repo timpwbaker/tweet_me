@@ -1,0 +1,8 @@
+<%= render partial: "shared/errors", locals: { record: message } %>
+<%= form_for(message) do |form_object| %>
+  <%= form_object.hidden_field :user_id, value: current_user.id %>
+  <%= form_object.label :body, "New message" %>
+  <%= form_object.text_area :body %>
+
+  <%= form_object.submit "Send" %>
+<% end %>
