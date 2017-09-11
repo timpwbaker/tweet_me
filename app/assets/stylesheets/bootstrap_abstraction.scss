@@ -14,6 +14,8 @@ article.message .message-body-text-only { @extend .col-md-11 }
 article.message .message-body-mixed-media { @extend .col-md-8 }
 article.message .message-image { @extend .col-md-3 }
 article.message .message-delete { @extend .col-md-1 }
+article.sign-up-form-header { @extend .col-md-6 }
+article.sign-up-form { @extend .col-md-6 }
 
 .alert { @extend .alert }
 .alert-success { @extend .alert-success }
@@ -22,9 +24,9 @@ article.message .message-delete { @extend .col-md-1 }
 //Navigation elements
 nav { @extend .navbar; }
 nav a.home { @extend .navbar-brand }
+nav ul.right-side { @extend .nav; @extend .navbar-nav }
 
 // Interactive elements
-input.submit { @extend .btn; @extend .btn-primary }
 a.delete-message { @extend .btn; @extend .btn-danger }
 
 // Text elements
@@ -32,6 +34,7 @@ p.strong { @extend .lead; }
 small { @extend .text-muted }
 
 // Form elements
-
+form input { @extend .form-control; }
 div.field-group { @extend .form-group; }
+input.submit { @extend .btn; @extend .btn-primary }
 

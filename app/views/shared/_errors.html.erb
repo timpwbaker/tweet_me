@@ -1,7 +1,7 @@
 <% if record.errors.any? %>
   <div class="alert alert-danger">
     <p>
-      This <%= record.class.name.downcase %> couldn't be sent because the 
+      This <%= record.class.name.downcase %> couldn't be created because the 
       <%= record.errors.full_messages.map(&:downcase).to_sentence %>
     </p>
   </div>

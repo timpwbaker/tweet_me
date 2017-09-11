@@ -1,0 +1,30 @@
+<section class="sign-up">
+  <article class="sign-up-form-header">
+  <h1>Create an account
+    <small>and start shouting into the Internet</small></h1>
+  </article>
+  <article class="sign-up-form">
+  <%= render partial: "shared/errors", locals: { record: user } %>
+    <%= form_for user do |form_object| %>
+      <div class="field-group">
+        <%= form_object.label :name %>
+        <%= form_object.text_field :name %>
+      </div>
+      <div class="field-group">
+        <%= form_object.label :email %></br>
+        <%= form_object.text_field :email %>
+      </div>
+      <div class="field-group">
+        <%= form_object.label :password %>
+        <%= form_object.password_field :password %>
+      </div>
+      <div class="field-group">
+        <%= form_object.label :password_confirmation %>
+        <%= form_object.password_field :password_confirmation %>
+      </div>
+      <div class="field-group">
+        <%= form_object.submit "Sign up", class: "submit" %>
+      </div>
+    <% end %>
+  </article>
+</section>

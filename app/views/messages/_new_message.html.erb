@@ -3,7 +3,7 @@
   <%= form_for(new_message) do |form_object| %>
     <section>
     <div class="message-body">
-      <%= form_object.hidden_field :user_id, value: current_user.id %>
+      <%= form_object.hidden_field :user_id, value: user.id %>
       <%= form_object.text_area :body, placeholder: "Send a new message..." %>
     </div>
 

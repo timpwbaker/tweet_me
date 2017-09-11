@@ -27,6 +27,10 @@ class MessagesController < ApplicationController
 
   private
 
+  def sender
+    current_user
+  end
+
   def message
     Message.find(params[:id])
   end

@@ -13,7 +13,7 @@
     </div>
   <% end %>
   <div class="message-delete">
-    <%= link_to message_path(message), method: :delete, class: 'delete-message' do %>
+    <%= link_to message_path(message), id: "delete-message-#{message.id}", method: :delete, class: 'delete-message' do %>
       <%= image_tag "trash" %>
     <% end %>
   </div>
