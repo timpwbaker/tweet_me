@@ -1,9 +1,7 @@
 <main>
-  <section>
-    <%= render partial: "new_message", locals: {
-      new_message: new_message, user: user } %>
-  </section>
-  <section>
+<%= render partial: "new_message", locals: {
+  new_message: new_message, user: user } %>
+<section>
     <%= render partial: "message", collection: messages %>
   </section>
 </main>

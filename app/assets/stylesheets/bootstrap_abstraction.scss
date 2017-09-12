@@ -8,18 +8,15 @@ section { @extend .row; }
 article.new-message textarea { @extend .form-control; }
 article.new-message .message-body { @extend .col-md-9 }
 article.new-message .attach-submit { @extend .col-md-3 }
-article.message { @extend .row; @extend .col-md-12; }
-article.message .message-username { @extend .col-md-12; }
-article.message .message-body-text-only { @extend .col-md-11 }
-article.message .message-body-mixed-media { @extend .col-md-8 }
-article.message .message-image { @extend .col-md-3 }
-article.message .message-delete { @extend .col-md-1 }
+article.message { @extend .col-md-12; }
 article.sign-up-form-header { @extend .col-md-6 }
 article.sign-up-form { @extend .col-md-6 }
 
 .alert { @extend .alert }
 .alert-success { @extend .alert-success }
 .alert-danger { @extend .alert-danger }
+
+form.new_message { @extend .row }
 
 //Navigation elements
 nav { @extend .navbar; }
@@ -37,4 +34,3 @@ small { @extend .text-muted }
 form input { @extend .form-control; }
 div.field-group { @extend .form-group; }
 input.submit { @extend .btn; @extend .btn-primary }
-

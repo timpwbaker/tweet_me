@@ -5,11 +5,15 @@ article.message {
 
 article.new-message {
   width: 100%;
-  padding: 4% 2%;
+  padding: 4% 0;
 }
 
 article.new-message textarea {
   height: 100px;
+}
+
+article.message div {
+  padding: 0 10px 0 0;
 }
 
 .message-image img {
@@ -17,8 +21,47 @@ article.new-message textarea {
   border-radius: 5px;
 }
 
-.message-delete a {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.message-username {
+  width: 100%;
+}
+
+.message-body-text-only {
+  width: 90%;
+  float: left;
+}
+
+@media screen and (min-width: 800px) {
+  .message-body-mixed-media {
+    width: 55%;
+    float: left;
+  }
+
+  .message-image {
+    width: 35%;
+    float: left;
+  }
+
+  .message-delete {
+    width: 10%;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .message-body-mixed-media {
+    width: 90%;
+    margin-bottom: 10px;
+    float: left;
+  }
+
+  .message-image {
+    width: 90%;
+    margin-bottom: 10px;
+    float: left;
+  }
+
+  .message-delete {
+    width: 100%;
+    text-align: center;
+  }
 }
