@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   def index
     new_message = Message.new
-    render locals: { messages: messages, new_message: new_message }
+    render locals:
+      { messages: messages, new_message: new_message, user: sender }
   end
 
   def create
@@ -11,18 +12,18 @@ class MessagesController < ApplicationController
       flash[:success] = "Successfully sent message, why not send another?"
       redirect_to root_path
     else
-      render :index, locals: { messages: messages, new_message: message }
+      render :index,
+             locals: { messages: messages, new_message: message, user: sender }
     end
   end
 
   def destroy
     if message.destroy
       flash[:success] = "Successfully deleted your message"
-      redirect_to root_path
     else
       flash[:error] = "It is not possible to delete this message"
-      redirect_to root_path
     end
+    redirect_to root_path
   end
 
   private

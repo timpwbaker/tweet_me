@@ -1,0 +1,29 @@
+AllCops:
+  Exclude:
+    - "Gemfile"
+    - "Gemfile.lock"
+    - "config.ru"
+    - "Rakefile"
+    - "bin/*"
+    - "config/*/*"
+    - "config/*"
+    - "db/*"
+    - "spec/*/*"
+    - "spec/*"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+  Enabled: true
+
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  AllowInnerSlashes: true
+  SupportedStyles:
+    - slashes
+  Enabled: true
+
+Documentation:
+  Enabled: false

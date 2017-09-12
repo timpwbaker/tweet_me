@@ -44,6 +44,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
