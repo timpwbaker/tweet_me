@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TweetMe</title>
+    <title>twitTWOO</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,7 +11,7 @@
   <body>
     <section>
       <nav style="width:100%">
-        <h1><%= link_to "TweetME", root_path, class: "home" %>
+        <h1><%= link_to "twitTWOO", root_path, class: "home" %>
         <small>Be Original</small></h1>
          <ul class="right-side">
            <% if active_session? %>
